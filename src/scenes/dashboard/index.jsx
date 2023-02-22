@@ -1,10 +1,11 @@
-import { Box } from "@mui/icons-material";
+import { Box } from "@mui/material";
 import React from "react";
+import Header from "../../component/Header"
 
 
 const Dashboard = () => {
-  const theme = useTheme();
-  const colors = tokens(theme.palette.mode);
+  // const theme = useTheme();
+  // const colors = tokens(theme.palette.mode);
 
   return (
     <Box m="20px">
