@@ -1,9 +1,19 @@
-import React from 'react'
+import { Box } from "@mui/icons-material";
+import React from "react";
 
-const index = () => {
+
+const Dashboard = () => {
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
+
   return (
-    <div>index</div>
-  )
-}
+    <Box m="20px">
+      {/* HEADER */}
+      <Box display="flex" justifyContent="space-between" alignItems="center">
+        <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
+       </Box>
+    </Box>
+  );
+};
 
-export default index
+export default Dashboard;
