@@ -1,0 +1,47 @@
+/* This must be the first */
+
+.table-ul {
+    background-color: #dedede;
+    list-style: none;
+    padding-left: 0;
+    display: table;
+    table-layout: fixed;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .table-ul li {
+    border-right: solid 1px #fff;
+    display: table-cell;
+    height: 40px;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+  
+  .table-ul li:last-child {
+    border-right: 0;
+  }
+  
+  b {
+    color: red;
+  }
+  
+  btn {
+    margin: 20px 60px;
+  }
+  
+  div#content {
+    margin: 60px auto;
+    max-width: 360px;
+    min-width: 120px;
+    word-wrap: break-word;
+  }
+  
+  div.row.message {
+    border: solid 1px;
+    text-align: center;
+  }
+  
+  p.timer-message {
+    text-align: center;
+  }

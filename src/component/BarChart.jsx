@@ -4,13 +4,12 @@ import { tokens } from "../theme";
 import { mockBarData as data } from "../data/mockData";
 
 const BarChart = ({ isDashboard = false }) => {
-    const theme = useTheme();
-    const colors = tokens(theme.palette.mode);
+  const theme  = useTheme();
+  const colors = tokens(theme.palette.mode);
 
-
-    return ( 
-        <ResponsiveBar 
-              data={data}
+  return (
+    <ResponsiveBar
+      data={data}
       theme={{
         // added
         axis: {
@@ -124,8 +123,8 @@ const BarChart = ({ isDashboard = false }) => {
       barAriaLabel={function (e) {
         return e.id + ": " + e.formattedValue + " in country: " + e.indexValue;
       }}
-        />
-    );
+    />
+  );
 };
 
 export default BarChart;

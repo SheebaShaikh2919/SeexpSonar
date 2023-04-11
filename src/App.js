@@ -1,19 +1,12 @@
-import { Routes, Route } from 'react-router-dom';
 import { ColorModeContext,useMode } from './theme';
 import { CssBaseline, ThemeProvider } from "@mui/material";
-import Topbar from "./scenes/global/Topbar";
-import Sidebar from "./scenes/global/Sidebar";
 import Dashboard from './scenes/dashboard';
-import Team from "./scenes/Team";
-import Invoices from "./scenes/Invoices";
-import Contact from "./scenes/Contact";
-import Form from "./scenes/Form";
-import Calendar from "./scenes/Calendar"; 
-import FAQ from "./scenes/FAQ";
-// import Bar from "./scenes/Bar";  
-// import Line from "./scenes/Line";
-// import Pie from "./scenes/Pie";
-// import Geography from "./scenes/Geography"; 
+import React from 'react';
+import { HashRouter as Router, Switch, Route } from 'react-router-dom';
+// import Post from "./pages/Posts/Post";
+import LoginRegister from "./pages/LoginRegister/LoginRegister";
+import { AuthProvider } from './context/Auth';
+import PrivateRoute from './common/guards/PrivateRoute';
 import './App.css';
 
 
@@ -23,25 +16,18 @@ function App() {
     <ColorModeContext.Provider value={colorMode}>
     <ThemeProvider theme={theme}>
       <CssBaseline/>
-    <div className="app">
-    <Sidebar />
-      <main className='content'>
-        <Topbar />
-       <Routes>
-        <Route path='/' element={<Dashboard />}/>
-        <Route path='/team' element={<Team />}/>
-        <Route path='/contacts' element={<Contact />}/>
-        <Route path='/invoices' element={<Invoices />}/>
-        <Route path='/form' element={<Form />}/>
-        <Route path='/calendar' element={<Calendar />}/>
-        <Route path='/faq' element={<FAQ />}/>
-        {/* <Route path='/bar' element={<Bar />}/> */}
-        {/* <Route path='/line' element={<Line />}/> */}
-        {/* <Route path='/pie' element={<Pie />}/> */}
-        {/* <Route path='/geography' element={<Geography />}/> */}
-       </Routes>
-      </main>
-    </div>
+    <AuthProvider>
+    
+      <Router>
+        <Switch>
+          <PrivateRoute exact path="/" component={Dashboard} />
+          {/* <PrivateRoute path='/Post' component={Post} /> */}
+          <Route path="/LoginRegister" component={LoginRegister} />
+          <Route exact path="*" component={Dashboard} />
+        </Switch>
+      </Router>
+     
+    </AuthProvider>
     </ThemeProvider>
     </ColorModeContext.Provider>
   );
