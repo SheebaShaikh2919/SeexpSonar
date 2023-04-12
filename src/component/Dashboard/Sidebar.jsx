@@ -139,6 +139,20 @@ const Sidebar = () => {
               Games
             </Typography>
             <Item
+              title="Personal-History"
+              to="/PersonalHistory"
+              icon={<CalendarTodayOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <Item
+              title="Medical-History"
+              to="/MedicalHistory"
+              icon={<CalendarTodayOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <Item
               title="AQ-Test"
               to="/AQTest"
               icon={<CalendarTodayOutlinedIcon />}
@@ -165,6 +179,7 @@ const Sidebar = () => {
               icon={<ExtensionIcon />}
               selected={selected}
               setSelected={setSelected}
+              style={{color : "#fff"}}
             />
 
 

@@ -11,6 +11,8 @@ import PrivateRoute from './common/guards/PrivateRoute';
 import './App.css';
 import FingerTapping from './pages/FingerTapping/FIngerTapping';
 import EMGame from './pages/EMGame/EMGame';
+import PersonalHistory from './pages/PersonalHistory/PersonalHistory';
+import MedicalHistory from './pages/MedicalHistory/MedicalHistory';
 
 
 function App() {
@@ -27,6 +29,8 @@ function App() {
           <PrivateRoute  path="/AQTest" component={AQTest} />
           <PrivateRoute  path="/FingerTapping" component={FingerTapping} />
           <PrivateRoute  path="/EmojiTest" component={EMGame} />
+          <PrivateRoute  path="/MedicalHistory" component={MedicalHistory} />
+          <PrivateRoute  path="/PersonalHistory" component={PersonalHistory} />
           <Route path="/SignIn" component={SignIn} />
           <Route path="/SignUp" component={SignUp} />
           <Route exact path="*" component={Home} />
