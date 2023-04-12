@@ -1,10 +1,4 @@
 import React, { useState, useEffect, useContext } from "react";
-import Button from '@mui/material/Button';
-import Stack from '@mui/material/Stack';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
 import Axios from "axios";
 import { AuthContext } from '../../context/Auth';
 
@@ -18,7 +12,6 @@ function Tapping() {
 
     const [timer, setTimer] = useState(0);
     const [buttonDisabled, setButtonDisabled] = useState(false);
-    const [refresh, setRefresh] = useState(false);
 
     const [postData, setPostData] = useState("");
 
@@ -27,10 +20,7 @@ function Tapping() {
 
     const [submitDisabled, setSubmitDisabled] = useState(false);
 
-
-
-
-  const userId = currentUser.uid;
+    const userId = currentUser.uid;
  
     // to Hide past date
     var today = new Date();
@@ -66,8 +56,6 @@ function Tapping() {
       .get(`https://fun-games-c4f99-default-rtdb.firebaseio.com/fingertapping/${userId}.json`)
       .then((response) => {
         setPostData(response.data);
-        // console.log(Object.entries(response.data).length);
-        // settrailCount(Object.entries(response.data).length);
         var grandTotal = 0;
         Object.entries(response.data).map((item) => {
           grandTotal += item[1].score;
@@ -121,49 +109,42 @@ function Tapping() {
   
     return (
       <>
-      <Card>
-      <CardContent>
-      <Typography variant="h5" sx={{ fontSize: 80 }} component="div">
-        Timer: {timer}s
-        </Typography>
-        <Typography sx={{ fontSize: 120 }} color="text.secondary" gutterBottom>
-        Counter: {count}
-        </Typography>
-      </CardContent>
-      <CardActions>
-      <Stack direction="row" spacing={2}>
-        <Button variant="contained" sx={{ fontSize: 30 }} color="success" onClick={handleButtonClick} disabled={buttonDisabled}>
-          Tap me
-        </Button>
-        <Button variant="contained" sx={{ fontSize: 30 }} color="success" onClick={handleRefreshClick}>Reset</Button>
-        <Button variant="contained" sx={{ fontSize: 30 }} color="success" onClick={handleAddPostData} disabled={submitDisabled}>Submit Score</Button>
-        </Stack>
-      </CardActions>
-    </Card>
-
-    <Card>
-    <Typography variant="h5" sx={{ fontSize:40 }} component="div">
-             {/* total : {average} */}
-              Total : {(average).toFixed(0)}
-            </Typography>
-      <CardContent>
-      {postData ?
-        Object.entries(postData).map((item) => {
-        //  {console.log(item[1].score)}
-          // const average = (item[1].score);
-          return (
-          <>      
-            <Typography variant="h5" sx={{ fontSize:40 }} component="div">
-             {/* total : {average} */}
-              Score : {item[1].score}
-            </Typography>
-            <Typography sx={{ fontSize: 40 }} color="text.secondary" gutterBottom>
-              status: {item[1].status == 1 ? "authestic" : "non authestic"}
-            </Typography>
-          </>
-         )} ) : <span className="noTaskAdded p-5">To View Score Play the game</span>}
-      </CardContent>
-    </Card>
+        <div className="row justify-content-center">
+          <div className="col-lg-6">
+            <div className="border p-4 shadow">
+              <h4 className="text-right">Timer: {timer}s</h4>
+              <h1 className="text-center my-5">Counter: {count}</h1>
+              <button className="btn btn-warning" onClick={handleButtonClick} disabled={buttonDisabled}>Tap Me to start</button>
+              <button className="btn btn-danger mx-2" onClick={handleRefreshClick}>Reset</button>
+              <button className="btn btn-success" onClick={handleAddPostData} disabled={submitDisabled}>Submit Result</button>
+            </div>
+          </div>
+          <div className="col-lg-6">
+          <div className="border p-4 shadow">
+          <h4 className="">Score</h4>
+          <table class="table table-striped table-hover table-bordered border-primary">
+          <thead>
+            <tr>
+              <th scope="col"><h6>No of Trails</h6></th>
+              <th scope="col"><h6>Score</h6></th>
+            </tr>
+          </thead>
+          <tbody>
+          {postData ?
+            Object.entries(postData).map((item, index) => {
+              return (
+                <tr>
+                  <th scope="row">{index + 1} trail</th>
+                  <td>{item[1].score}</td>
+                </tr>
+              )} ) : <span className="noTaskAdded p-5">To View Score Play the game</span>}
+          </tbody>
+          <h5 className="mt-4">Average : {(average).toFixed(0)}</h5>
+          <h5 className="mt-4">Status : {((average).toFixed(0) >= 50 && (average).toFixed(0) <= 60) ? <span className="text-success">Non Autistic</span> : <span className="text-danger">Autistic</span>} </h5>
+        </table>
+        </div>
+          </div>
+        </div>
     </>
     );  
 }
