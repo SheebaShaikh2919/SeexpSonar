@@ -10,6 +10,7 @@ import { AuthProvider } from './context/Auth';
 import PrivateRoute from './common/guards/PrivateRoute';
 import './App.css';
 import FingerTapping from './pages/FingerTapping/FIngerTapping';
+import EMGame from './pages/EMGame/EMGame';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <PrivateRoute exact path="/" component={Home} />
           <PrivateRoute  path="/AQTest" component={AQTest} />
           <PrivateRoute  path="/FingerTapping" component={FingerTapping} />
+          <PrivateRoute  path="/EmojiTest" component={EMGame} />
           <Route path="/SignIn" component={SignIn} />
           <Route path="/SignUp" component={SignUp} />
           <Route exact path="*" component={Home} />
