@@ -13,6 +13,8 @@ import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import ExtensionIcon from '@mui/icons-material/Extension';
+import QuizIcon from '@mui/icons-material/Quiz';
+import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
 // import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
 // import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutlined";
 // import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
@@ -141,28 +143,28 @@ const Sidebar = () => {
             <Item
               title="Personal-History"
               to="/PersonalHistory"
-              icon={<CalendarTodayOutlinedIcon />}
+              icon={<PeopleOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
-            <Item
+            {/* <Item
               title="Medical-History"
               to="/MedicalHistory"
               icon={<CalendarTodayOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
-            />
+            /> */}
             <Item
               title="AQ-Test"
               to="/AQTest"
-              icon={<CalendarTodayOutlinedIcon />}
+              icon={<QuizIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
               title="Finger-Tapping"
               to="/FingerTapping"
-              icon={<PeopleOutlinedIcon />}
+              icon={<SportsEsportsIcon />}
               selected={selected}
               setSelected={setSelected}
             />
@@ -173,17 +175,17 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
-            <Item
+            {/* <Item
               title="Brain Frequency"
               to="/BrainFrequency"
               icon={<ExtensionIcon />}
               selected={selected}
               setSelected={setSelected}
               style={{color : "#fff"}}
-            />
+            /> */}
 
 
-            <Typography
+            {/* <Typography
               variant="h6"
               color={colors.grey[300]}
               sx={{ m: "15px 0 5px 20px" }}
@@ -196,7 +198,7 @@ const Sidebar = () => {
               icon={<PersonOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
-            />
+            /> */}
             {/* <Item
               title="Calendar"
               to="/calendar"
@@ -204,13 +206,13 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             /> */}
-            <Item
+            {/* <Item
               title="FAQ Page"
               to="/faq"
               icon={<HelpOutlineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
-            />
+            /> */}
             {/* <Item
               title="Bar Chart"
               to="/bar"

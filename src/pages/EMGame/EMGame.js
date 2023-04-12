@@ -1,10 +1,12 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import React from "react";
+import EmojiGame from "../../component/EmojiGame/EmojiGame"
 import Topbar from "../../component/Dashboard/Topbar";
 import Sidebar from "../../component/Dashboard/Sidebar";
-import EmojiGame from "../../component/EmojiGame/EmojiGame";
+import Container  from "@mui/material/Container";
 
-const EMGame = () => {
+
+const AQTest = () => {
   // const theme = useTheme();
   // const colors = tokens(theme.palette.mode);
 
@@ -13,15 +15,31 @@ const EMGame = () => {
     <Sidebar />
       <main className='content'>
         <Topbar />
-    <Box m="20px">
-      {/* HEADER */}
-      <Box display="flex" justifyContent="space-between" alignItems="center">
-        <EmojiGame/>
-       </Box>
-    </Box>
+        <Box sx={{
+            marginTop: 8,
+            display: 'flex',
+            flexDirection: 'column',
+            // alignItems: 'center',
+          }}>
+          <Typography
+            variant="h2"
+            // color={colors.grey[100]}
+            fontWeight="bold"
+            sx={{ m: "5px 25px" }}
+          >
+              Emoji Test          
+            </Typography>
+          <Typography variant="h5"
+            sx={{ m: "0px 25px" }} >
+            Game
+          </Typography>
+            <Container maxWidth="xl" sx={{ mt: 2, mb: 2 }}>
+            <EmojiGame/>
+            </Container>
+        </Box>
     </main>
     </div>
   );
 };
 
-export default EMGame;
+export default AQTest;
