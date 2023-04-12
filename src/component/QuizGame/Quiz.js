@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { QuizData } from './QuizData'
 import QuizResult from './QuitResult';
 
+
 function Quiz() {
     const [currentQuestion,setCurrentQuestion]=useState(0);
     const [score,setScore] = useState(0);
@@ -45,7 +46,7 @@ function Quiz() {
                     return(
                         <button 
                         // className="option-btn"
-                        className={`option-btn ${
+                        className={`option-btn btn-primary btn ${
                             clickedOption == i+1?"checked":null
                         }`}
                         key={i}
@@ -59,8 +60,8 @@ function Quiz() {
             <input type="button" value="Next" id="next-button" onClick={changeQuestion}/>
             </>)}
         </div>
-    </div>
-  )
+        </div>
+   )
 }
 
 export default Quiz
