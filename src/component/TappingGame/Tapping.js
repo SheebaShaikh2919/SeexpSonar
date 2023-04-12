@@ -122,6 +122,7 @@ function Tapping() {
           <div className="col-lg-6">
           <div className="border p-4 shadow">
           <h4 className="">Score</h4>
+          {postData ?
           <table class="table table-striped table-hover table-bordered border-primary">
           <thead>
             <tr>
@@ -130,18 +131,18 @@ function Tapping() {
             </tr>
           </thead>
           <tbody>
-          {postData ?
-            Object.entries(postData).map((item, index) => {
+            {Object.entries(postData).map((item, index) => {
               return (
-                <tr>
+                <tr key={item[1]}>
                   <th scope="row">{index + 1} trail</th>
                   <td>{item[1].score}</td>
                 </tr>
-              )} ) : <span className="noTaskAdded p-5">To View Score Play the game</span>}
+              )} ) }
           </tbody>
           <h5 className="mt-4">Average : {(average).toFixed(0)}</h5>
           <h5 className="mt-4">Status : {((average).toFixed(0) >= 50 && (average).toFixed(0) <= 60) ? <span className="text-success">Non Autistic</span> : <span className="text-danger">Autistic</span>} </h5>
         </table>
+        : <span className="noTaskAdded p-5">To View Score Play the game</span>}
         </div>
           </div>
         </div>
