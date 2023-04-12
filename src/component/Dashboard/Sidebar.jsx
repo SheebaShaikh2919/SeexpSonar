@@ -85,7 +85,7 @@ const Sidebar = () => {
                 ml="15px"
               >
                 <Typography variant="h3" color={colors.grey[100]}>
-                {currentUser.email}
+                {/* <MenuOutlinedIcon /> */}
                 </Typography>
                 <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
                   <MenuOutlinedIcon />
@@ -115,7 +115,7 @@ const Sidebar = () => {
                   Fun&Games
                 </Typography>
                 <Typography variant="h5" color={colors.greenAccent[500]}>
-                  Web Developer
+                {currentUser.email}
                 </Typography>
               </Box>
             </Box>
@@ -139,14 +139,14 @@ const Sidebar = () => {
             </Typography>
             <Item
               title="AQ-Test"
-              to="/AQ-Test"
+              to="/AQTest"
               icon={<CalendarTodayOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
               title="Finger-Tapping"
-              to="/Finger-Tapping"
+              to="/FingerTapping"
               icon={<PeopleOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}

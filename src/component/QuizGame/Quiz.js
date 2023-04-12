@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import { QuizData } from '../Data/QuizData'
-import QuizResult from './QuizResult';
+import { QuizData } from './QuizData'
+import QuizResult from './QuitResult';
+
 function Quiz() {
     const [currentQuestion,setCurrentQuestion]=useState(0);
     const [score,setScore] = useState(0);

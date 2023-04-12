@@ -1,13 +1,15 @@
 import { ColorModeContext,useMode } from './theme';
 import { CssBaseline, ThemeProvider } from "@mui/material";
-import Dashboard from './scenes/dashboard';
 import React from 'react';
 import { HashRouter as Router, Switch, Route } from 'react-router-dom';
-// import Post from "./pages/Posts/Post";
-import LoginRegister from "./pages/LoginRegister/LoginRegister";
+import Home from "./pages/Home/Home";
+import AQTest from "./pages/AQTest/AQTest";
+import SignIn from './pages/SignIn/SignIn';
+import SignUp from './pages/SignUp/SignUp';
 import { AuthProvider } from './context/Auth';
 import PrivateRoute from './common/guards/PrivateRoute';
 import './App.css';
+import FingerTapping from './pages/FingerTapping/FIngerTapping';
 
 
 function App() {
@@ -20,10 +22,12 @@ function App() {
     
       <Router>
         <Switch>
-          <PrivateRoute exact path="/" component={Dashboard} />
-          {/* <PrivateRoute path='/Post' component={Post} /> */}
-          <Route path="/LoginRegister" component={LoginRegister} />
-          <Route exact path="*" component={Dashboard} />
+          <PrivateRoute exact path="/" component={Home} />
+          <PrivateRoute  path="/AQTest" component={AQTest} />
+          <PrivateRoute  path="/FingerTapping" component={FingerTapping} />
+          <Route path="/SignIn" component={SignIn} />
+          <Route path="/SignUp" component={SignUp} />
+          <Route exact path="*" component={Home} />
         </Switch>
       </Router>
      
