@@ -1,8 +1,10 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import React from "react";
 import QuizGame from "../../component/QuizGame/Quiz"
 import Topbar from "../../component/Dashboard/Topbar";
 import Sidebar from "../../component/Dashboard/Sidebar";
+import Container  from "@mui/material/Container";
+
 
 const AQTest = () => {
   // const theme = useTheme();
@@ -13,12 +15,28 @@ const AQTest = () => {
     <Sidebar />
       <main className='content'>
         <Topbar />
-    <Box m="20px">
-      {/* HEADER */}
-      <Box display="flex" justifyContent="space-between" alignItems="center">
-        <QuizGame/>
-       </Box>
-    </Box>
+        <Box sx={{
+            marginTop: 8,
+            display: 'flex',
+            flexDirection: 'column',
+            // alignItems: 'center',
+          }}>
+          <Typography
+            variant="h2"
+            // color={colors.grey[100]}
+            fontWeight="bold"
+            sx={{ m: "5px 25px" }}
+          >
+              AQ Test          
+            </Typography>
+          <Typography variant="h5"
+            sx={{ m: "0px 25px" }} >
+            Game
+          </Typography>
+            <Container maxWidth="xl" sx={{ mt: 2, mb: 2 }}>
+            <QuizGame/>
+            </Container>
+        </Box>
     </main>
     </div>
   );

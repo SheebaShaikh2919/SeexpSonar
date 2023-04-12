@@ -4,10 +4,10 @@ function QuizResult(props) {
   return (
     <>
     <div className='show-score'>
-        Your Score:{props.score}<br/>
-        Total Score:{props.totalScore}
+        <h2>Your Score: {props.score}</h2>
+        <h2> Total Score: {props.totalScore}</h2>
     </div>
-    <button id="next-button" onClick={props.tryAgain}>Try Again</button>
+    <button className="next-button btn-primary btn" onClick={props.tryAgain}>Try Again</button>
     </>
   )
 }
