@@ -115,7 +115,7 @@ const Sidebar = () => {
                   fontWeight="bold"
                   sx={{ m: "10px 0 0 0" }}
                 >
-                  Fun&Games
+                  ASD Tester
                 </Typography>
                 <Typography variant="h5" color={colors.greenAccent[500]}>
                 {currentUser.email}

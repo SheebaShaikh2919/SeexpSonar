@@ -45,7 +45,7 @@ function EmojiGame() {
 
   const getPostData = () => {
     Axios
-    .get(`https://fun-games-c4f99-default-rtdb.firebaseio.com/aqtest/${userId}.json`)
+    .get(`https://fun-games-c4f99-default-rtdb.firebaseio.com/emojitest/${userId}.json`)
     .then((response) => {
       setPostData(response.data);
     })
