@@ -25,7 +25,7 @@ const FingerTapping = () => {
             fontWeight="bold"
             sx={{ m: "5px 25px" }}
           >
-            Fingre Tapping
+            Finger Tapping
           </Typography>
           <Typography variant="h5"
             sx={{ m: "0px 25px" }} >
