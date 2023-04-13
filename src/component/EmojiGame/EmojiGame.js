@@ -121,7 +121,7 @@ function EmojiGame() {
                   <th scope="row">{index + 1} trail</th>
                   <td>10</td>
                   <td>{item[1].score}</td>
-                  <td>{item[1].status == 0 ? <span className="text-success">Non Autistic</span> : <span className="text-danger">Autistic</span>}</td>
+                  <td>{item[1].status == 1 ? <span className="text-success">Non Autistic</span> : <span className="text-danger">Autistic</span>}</td>
                 </tr>
               )} ) }
           </tbody>
