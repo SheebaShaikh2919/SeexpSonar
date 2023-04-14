@@ -175,14 +175,13 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
-            {/* <Item
+            <Item
               title="Brain Frequency"
               to="/BrainFrequency"
               icon={<ExtensionIcon />}
               selected={selected}
               setSelected={setSelected}
-              style={{color : "#fff"}}
-            /> */}
+            />
 
 
             {/* <Typography

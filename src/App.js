@@ -13,6 +13,7 @@ import FingerTapping from './pages/FingerTapping/FIngerTapping';
 import EMGame from './pages/EMGame/EMGame';
 import PersonalHistory from './pages/PersonalHistory/PersonalHistory';
 import MedicalHistory from './pages/MedicalHistory/MedicalHistory';
+import Brainfrequency from './pages/Brainfrequency/Braintest';
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
           <PrivateRoute  path="/EmojiTest" component={EMGame} />
           <PrivateRoute  path="/MedicalHistory" component={MedicalHistory} />
           <PrivateRoute  path="/PersonalHistory" component={PersonalHistory} />
+          <PrivateRoute  path="/Brainfrequency" component={Brainfrequency} />
           <Route path="/SignIn" component={SignIn} />
           <Route path="/SignUp" component={SignUp} />
           <Route exact path="*" component={Home} />
