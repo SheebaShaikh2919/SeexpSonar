@@ -46,7 +46,7 @@ const handleAddPostData = () => {
     )
       .then((response) => {
         alert("score added succesfully");
-        // window.location.reload();
+        window.location.reload();
         setIsPostAdded(true);
       })
       .catch((error) => console.log("Error" + error));

@@ -29,10 +29,6 @@ const AQTest = () => {
           >
              Brain Frequency          
             </Typography>
-          <Typography variant="h5"
-            sx={{ m: "0px 25px" }} >
-            Test
-          </Typography>
             <Container maxWidth="xl" sx={{ mt: 2, mb: 2 }}>
             <Brainfrequency/>
             </Container>

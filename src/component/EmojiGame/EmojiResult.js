@@ -39,14 +39,14 @@ const handleAddPostData = () => {
     .post(`https://fun-games-c4f99-default-rtdb.firebaseio.com/emojitest/${userId}.json`,
       {
         score: props.score,
-        status: props.score > 6 ? 1 : 0,
+        status: props.score > 4 ? 1 : 0,
         user: currentUser.email,
         Timestamp: new Date().toUTCString(),
       }
     )
       .then((response) => {
         alert("score added succesfully");
-        // window.location.reload();
+        window.location.reload();
         setIsPostAdded(true);
       })
       .catch((error) => console.log("Error" + error));
