@@ -147,13 +147,13 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
-            {/* <Item
+            <Item
               title="Medical-History"
               to="/MedicalHistory"
               icon={<CalendarTodayOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
-            /> */}
+            />
             <Item
               title="AQ-Test"
               to="/AQTest"
@@ -189,8 +189,13 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
-
-
+             <Item
+              title="Ball Clicking Test"
+              to="/BallGame"
+              icon={<ExtensionIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
 
             {/* <Typography
               variant="h6"

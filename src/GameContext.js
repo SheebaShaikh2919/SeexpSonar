@@ -98,13 +98,22 @@ export const DataProvider = ({ children }) => {
     StartSelecetionCounter();
   }
 
-  const UpgradeLevel = () => {
-    SetGameLeveL(gameLevel => gameLevel += 1)
-    clearInterval(slecetiontTimeInterval.current)
-    SetClicked(Clicked => !Clicked)
-    SetGameStarted(gameStarted => gameStarted = false)
-  }
+  // const UpgradeLevel = () => {
+  //   SetGameLeveL(gameLevel => gameLevel += 1)
+  //   clearInterval(slecetiontTimeInterval.current)
+  //   SetClicked(Clicked => !Clicked)
+  //   SetGameStarted(gameStarted => gameStarted = false)
+  // }
 
+  const UpgradeLevel = () => {
+    console.log(gameLevel)
+    if (gameLevel < 3){
+        SetGameLeveL(gameLevel => gameLevel += 1)
+        clearInterval(slecetiontTimeInterval.current)
+        SetClicked(Clicked => !Clicked)
+        SetGameStarted(gameStarted => gameStarted = false)
+      }
+    }
   const ResetGame = () => {
     setHealth(health => health = 3)
     SetGameLeveL(gameLevel => gameLevel = 1)
