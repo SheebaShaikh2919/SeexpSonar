@@ -107,12 +107,14 @@ export const DataProvider = ({ children }) => {
 
   const UpgradeLevel = () => {
     console.log(gameLevel)
-    if (gameLevel < 3){
-        SetGameLeveL(gameLevel => gameLevel += 1)
         clearInterval(slecetiontTimeInterval.current)
         SetClicked(Clicked => !Clicked)
         SetGameStarted(gameStarted => gameStarted = false)
+        if (gameLevel < 3){
+          SetGameLeveL(gameLevel => gameLevel += 1)
       }
+      else 
+        ResetGame()
     }
   const ResetGame = () => {
     setHealth(health => health = 3)
