@@ -182,6 +182,14 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
+            <Item
+              title="Memory Test"
+              to="/MemoryTest"
+              icon={<ExtensionIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+
 
 
             {/* <Typography

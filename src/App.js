@@ -14,6 +14,7 @@ import EMGame from './pages/EMGame/EMGame';
 import PersonalHistory from './pages/PersonalHistory/PersonalHistory';
 import MedicalHistory from './pages/MedicalHistory/MedicalHistory';
 import Brainfrequency from './pages/Brainfrequency/Braintest';
+import MemoryTest from './pages/MemoryTest/MemoryTest'
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
           <PrivateRoute  path="/MedicalHistory" component={MedicalHistory} />
           <PrivateRoute  path="/PersonalHistory" component={PersonalHistory} />
           <PrivateRoute  path="/Brainfrequency" component={Brainfrequency} />
+          <PrivateRoute  path="/MemoryTest" component={MemoryTest} />
           <Route path="/SignIn" component={SignIn} />
           <Route path="/SignUp" component={SignUp} />
           <Route exact path="*" component={Home} />
