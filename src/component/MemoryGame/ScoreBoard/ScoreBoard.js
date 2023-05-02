@@ -9,28 +9,28 @@ import ProgressTimer from "./ProgressTimer";
 
 
 function ScoreBoard() {
-    const { health, gameLevel,previewSeconds, showPreviewCounter, selectionSeconds } = useContext(DataContext)
+    const { previewSeconds, showPreviewCounter, selectionSeconds , misses , score} = useContext(DataContext)
 
 
     return (
 
         <Box container sx={{ display: "flex", flexDirection: 'row', justifyContent: "center", height: "130px" }}>
             <Box sx={{ display: "flex", justifyContent: "center", alignContent: "center", pt: "5px", border: "thin solid rgb(23, 105, 170)", boxShadow: "0 0 10px rgba(23, 105, 170,0.7)", borderRadius: "15px", width: "150px", height: "50px", mt: "25px", }}>
-                <Typography variant="h4" sx={{ color: "rgb(23, 105, 170)" }}>Score:{gameLevel}</Typography>
+                <Typography variant="h4" sx={{ color: "rgb(23, 105, 170)" }}>Score: {score}</Typography>
             </Box>
 
             <Box container sx={{ display: "flex", justifyContent: "center", alignContent: "center", borderRadius: "15px", width: "350px", pt:"5px" ,height: "100px", mr: "20px", ml: "20px" }}>
               
             <Slide direction="up" in={showPreviewCounter} mountOnEnter unmountOnExit>
-               <div> <ProgressTimer  value={(previewSeconds /(1+(3*gameLevel) ) * 100)}  time={previewSeconds} title={"PREVIEW TIME"}  customcolor={"rgb(23, 105, 170)"} /> </div>
+               <div> <ProgressTimer  value={(previewSeconds /(1+(3*score) ) * 100)}  time={previewSeconds} title={"PREVIEW TIME"}  customcolor={"rgb(23, 105, 170)"} /> </div>
                 </Slide>
 
                 <Slide direction="down" in={!showPreviewCounter} mountOnEnter unmountOnExit>
-               <div> <ProgressTimer  value={(selectionSeconds / (1+(5*gameLevel)) * 100)}  time={selectionSeconds} title={" SELECTION TIME"} customcolor={"orangered"} /> </div>
+               <div> <ProgressTimer  value={(selectionSeconds / (1+(5*score)) * 100)}  time={selectionSeconds} title={" SELECTION TIME"} customcolor={"orangered"} /> </div>
                 </Slide>
             </Box>
 
-            <Box sx={{ display: "flex", border: "thin solid rgb(23, 105, 170)", boxShadow: "0 0 10px rgba(23, 105, 170,0.7)", justifyContent: "center", borderRadius: "15px", width: "150px", height: "50px", mt: "25px" }}>
+            {/* <Box sx={{ display: "flex", border: "thin solid rgb(23, 105, 170)", boxShadow: "0 0 10px rgba(23, 105, 170,0.7)", justifyContent: "center", borderRadius: "15px", width: "150px", height: "50px", mt: "25px" }}>
 
                 {
                     [...Array(health)].map((_, index) => (
@@ -41,6 +41,10 @@ function ScoreBoard() {
                     [...Array(3 - health)].map((_, index) => (
                         <FavoriteBorderOutlinedIcon key={index} sx={{ fontSize: 40, mt: 1, color: "rgb(23, 105, 170)" }} />))
                 }
+            </Box> */}
+            <Box sx={{ display: "flex", justifyContent: "center", alignContent: "center", pt: "5px", border: "thin solid rgb(23, 105, 170)", boxShadow: "0 0 10px rgba(23, 105, 170,0.7)", borderRadius: "15px", width: "150px", height: "50px", mt: "25px" }}>
+            {/* <Typography variant="h4" sx={{ color: "rgb(23, 105, 170)" }}>Score:{score}</Typography> */}
+            <Typography variant="h4" sx={{ color: "rgb(23, 105, 170)" }}>Miss: {misses}</Typography>
             </Box>
 
         </Box>

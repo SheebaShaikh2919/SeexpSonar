@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import Axios from "axios";
 import { AuthContext } from '../../context/Auth';
 import { blue } from '@mui/material/colors';
+import zIndex from '@mui/material/styles/zIndex';
 
 const BallClicker = () => {
 
@@ -17,6 +18,7 @@ const BallClicker = () => {
   const [misses, setMisses] = useState(0);
   const [isPostAdded, setIsPostAdded] = useState(false);
   const [submitDisabled, setSubmitDisabled] = useState(false);
+  const [average, setAverage] = useState(0);
 
 
 
@@ -30,7 +32,17 @@ const BallClicker = () => {
       .get(`https://fun-games-c4f99-default-rtdb.firebaseio.com/Balltest/${userId}.json`)
       .then((response) => {
         setPostData(response.data);
+        var grandTotal = 0;
+        Object.entries(response.data).map((item) => {
+          grandTotal += item[1].total;
+        })
+        setAverage(grandTotal/Object.entries(response.data).length);
+        // console.log(response);
+        if (Object.entries(response.data).length >= 3) {
+          setSubmitDisabled(true);
+        }
       })
+      
       .catch((error) => console.log(error));
   };
 
@@ -56,13 +68,7 @@ const BallClicker = () => {
         alert("score added succesfully");
         window.location.reload();
         setIsPostAdded(true);
-
-      // setAverage(grandTotal/Object.entries(response.data).length);
-      // console.log(response);
-      if(Object.entries(response.data).length >= 3){
-        setSubmitDisabled(true);
-      }
-    })
+      })
       .catch((error) => console.log("Error" + error));
   };
 
@@ -90,52 +96,75 @@ const BallClicker = () => {
   // const rndInt = randomIntFromInterval(0, 100)
   // console.log(rndInt)
 
+  // function handleGameClick() {
+  //   // console.log("thandleGameClickest");
+  //   if (objectVisible) {
+  //     setScore(score + 1);
+  //     setObjectVisible(false);
+  //   }
+  // };
+
+  // function handleMiss() {
+  //   setMisses(misses + 1);
+  //   setObjectVisible(false);
+  // }
+
   function handleGameClick() {
-    // console.log("thandleGameClickest");
     if (objectVisible) {
       setScore(score + 1);
       setObjectVisible(false);
+    } else {
+      handleMiss();
     }
   };
-
+  
   function handleMiss() {
     setMisses(misses + 1);
     setObjectVisible(false);
-  }
+  };
 
 
 
   return (
     <>
+      {/* <div zindex={-5}> */}
+        <div className="row justify-content-start">
+          <div className="col-lg-8">
+            <div className="border shadow p-4">
 
-      <div className="row justify-content-start">
-        <div className="col-lg-8"  zindex={-5}>
-          <div className="border shadow p-4">
-
-            <div onClick={() => {
+              {/* <div onClick={() => {
               handleGameClick();
-              handleMiss();
-            }} zindex={5} >
-              <p>
-                Score:
-                {score}
-              </p>
-              <p>Misse:
-                {misses}
-              </p>
-              <button className="btn btn-success" onClick={handleAddPostData} disabled={submitDisabled}>Submit Result</button>
-
-              {objectVisible && <div style={{
-                position: 'absolute',
-                left: position.x,
-                top: position.y,
-                width: '50px',
-                height: '50px',
-                backgroundColor: 'green',
-                borderRadius: '50%'
-              }}></div>}
+              // handleMiss();
+            }} zindex={5} > */}
+              <div >
+                <p>
+                  Score: 
+                  {score}
+                </p>
+                <p>Misses: 
+                  {misses}
+                </p>
+                <button className="btn btn-success" onClick={handleAddPostData} disabled={submitDisabled}>Submit Result</button>
+              </div>
             </div>
-
+          </div>
+        </div>
+        <div className="row justify-content-start my-3">
+          <div className="col-lg-4">
+            <div className="border shadow p-4" onClick={handleMiss}  style={{ height: "400px" , zIndex: '-5' }}>
+              <div>
+                {objectVisible && <div style={{
+                  position: 'absolute',
+                  left: position.x,
+                  top: position.y,
+                  width: '50px',
+                  height: '50px',
+                  backgroundColor: 'green',
+                  borderRadius: '50%',
+                  zIndex: '5'
+                }} onClick={handleGameClick}></div>}
+              </div>
+            </div>
           </div>
         </div>
         <div className="col-lg-4">
@@ -166,13 +195,15 @@ const BallClicker = () => {
                     )
                   })}
                 </tbody>
+                <h5 className="mt-4">Average : {(average).toFixed(0)}</h5>
               </table>
               : <span className="noTaskAdded p-5">To View Score Play the game</span>}
 
           </div>
         </div>
 
-      </div>
+      {/* </div > */}
+
 
     </>
   )

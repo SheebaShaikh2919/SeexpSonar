@@ -6,26 +6,29 @@ const DataContext = createContext({})
 export const DataProvider = ({ children }) => {
 
   const [gameLevel, SetGameLeveL] = useState(1)
-  const [health, setHealth] = useState(3);
+  // const [health, setHealth] = useState(3);
 
   const Achivement = useRef(0);
 
 
-  const ReduceHealth = () => {
-    setHealth(health => health - 1)
-    if (health === 1) {
-      SetMessage(Message => Message = ".You have used all your chances")
-      setOpen(open => open = true)
-      ResetGame();
+  // const ReduceHealth = () => {
+  //   setHealth(health => health - 1)
+  //   if (health === 1) {
+  //     SetMessage(Message => Message = ".You have used all your chances")
+  //     setOpen(open => open = true)
+  //     ResetGame();
 
-    }
-  }
+  //   }
+  // }
 
   const [previewSeconds, setSeconds] = useState(1 + (3 * gameLevel))
   const [selectionSeconds, SetSelecionSeconds] = useState(1 + (8 * gameLevel))
   const [gameStarted, SetGameStarted] = useState(false)
   const [gameOver, SetGameOver] = useState(false)
   const [Message, SetMessage] = useState("")
+  const [misses, setMisses] = useState(0);
+  const [score, setScore] = useState(0);
+
 
   const interval = useRef(null)
 
@@ -45,7 +48,7 @@ export const DataProvider = ({ children }) => {
 
 
   const [resetUpdate, setResetUpdate] = useState(false)
-  const [open, setOpen] = useState(false);
+  // const [open, setOpen] = useState(false);
 
   const StartStage = () => {
     disableGameButtons.current = false
@@ -70,8 +73,9 @@ export const DataProvider = ({ children }) => {
   useEffect(() => {
     if (selectionSeconds === 0) {
       SetMessage(Message => Message = ".You ran out of time");
-      setOpen(open => open = true)
+      // setOpen(open => open = true)
       stopSelectiontime();
+      UpgradeLevel();
     }
   }, [selectionSeconds])
 
@@ -86,7 +90,7 @@ export const DataProvider = ({ children }) => {
   }, 1000)
 
   const stopSelectiontime = () => {
-
+    // UpgradeLevel();
     ResetGame();
   }
 
@@ -118,7 +122,7 @@ export const DataProvider = ({ children }) => {
       ResetGame()
   }
   const ResetGame = () => {
-    setHealth(health => health = 3)
+    // setHealth(health => health = 3)
     SetGameLeveL(gameLevel => gameLevel = 1)
     setResetUpdate(resetUpdate => !resetUpdate)
     clearInterval(slecetiontTimeInterval.current)
@@ -126,9 +130,9 @@ export const DataProvider = ({ children }) => {
     SetGameOver(gameOver => gameOver = true)
 
   }
-  const CloseModal = () => {
-    setOpen(open => open = false)
-  }
+  // const CloseModal = () => {
+  //   setOpen(open => open = false)
+  // }
 
   const correctCards = useRef(0);
   const gameMap = useRef([])
@@ -142,11 +146,13 @@ export const DataProvider = ({ children }) => {
     SetClicked(Clicked => !Clicked)
     buttonStates.current[Index] = true
     if (gameMap.current[Index] === "#4d4d00") {
-      ReduceHealth();
+      // ReduceHealth();
+      setMisses(misses + 1);
     }
     else {
       correctCards.current -= 1
       if (correctCards.current === 0) {
+        setScore(score + 1);
         UpgradeLevel()
       }
     }
@@ -163,8 +169,9 @@ export const DataProvider = ({ children }) => {
 
   }, [gameLevel, resetUpdate]);
   return (
-    <DataContext.Provider value={{ HideInstructions, showInstructions, DisplayInstructions, disableGameButtons, gameOver, Clicked, health, Message, Achivement, open, CloseModal, gameStarted, setHealth, ReduceHealth, gameLevel, UpgradeLevel, ResetGame, previewSeconds, StartStage, buttonStates, RevealHiddenColors, gameMap, showPreviewCounter, selectionSeconds }}>
-      {children}
+    // <DataContext.Provider value={{ HideInstructions, showInstructions, DisplayInstructions, disableGameButtons, gameOver, Clicked, health, Message, Achivement, open, CloseModal, gameStarted, setHealth, ReduceHealth, gameLevel, UpgradeLevel, ResetGame, previewSeconds, StartStage, buttonStates, RevealHiddenColors, gameMap, showPreviewCounter, selectionSeconds }}>
+    <DataContext.Provider value={{ HideInstructions, showInstructions, DisplayInstructions, disableGameButtons, gameOver, Clicked, Message, misses , score , Achivement, gameStarted, gameLevel, UpgradeLevel, ResetGame, previewSeconds, StartStage, buttonStates, RevealHiddenColors, gameMap, showPreviewCounter, selectionSeconds, misses }}>
+    {children}
     </DataContext.Provider>
   )
 }
