@@ -149,9 +149,6 @@ const BallClicker = () => {
             </div>
           </div>
         </div>
-        <div className="row justify-content-start my-3">
-          <div className="col-lg-4">
-            <div className="border shadow p-4" onClick={handleMiss}  style={{ height: "400px" , zIndex: '-5' }}>
               <div>
                 {objectVisible && <div style={{
                   position: 'absolute',
@@ -163,6 +160,9 @@ const BallClicker = () => {
                   borderRadius: '50%',
                   zIndex: '5'
                 }} onClick={handleGameClick}></div>}
+        <div className="row justify-content-start my-3">
+          <div className="col-lg-4">
+            <div className="border shadow p-4" onClick={handleMiss}  style={{ height: "400px" , zIndex: '-5', backgroundColor: "grey" }}>
               </div>
             </div>
           </div>
