@@ -16,7 +16,7 @@ function ScoreBoard() {
 
         <Box container sx={{ display: "flex", flexDirection: 'row', justifyContent: "center", height: "130px" }}>
             <Box sx={{ display: "flex", justifyContent: "center", alignContent: "center", pt: "5px", border: "thin solid rgb(23, 105, 170)", boxShadow: "0 0 10px rgba(23, 105, 170,0.7)", borderRadius: "15px", width: "150px", height: "50px", mt: "25px", }}>
-                <Typography variant="h4" sx={{ color: "rgb(23, 105, 170)" }}>Trail:{gameLevel}</Typography>
+                <Typography variant="h4" sx={{ color: "rgb(23, 105, 170)" }}>Score:{gameLevel}</Typography>
             </Box>
 
             <Box container sx={{ display: "flex", justifyContent: "center", alignContent: "center", borderRadius: "15px", width: "350px", pt:"5px" ,height: "100px", mr: "20px", ml: "20px" }}>

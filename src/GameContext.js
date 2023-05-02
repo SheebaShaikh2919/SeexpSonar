@@ -32,9 +32,9 @@ export const DataProvider = ({ children }) => {
   const slecetiontTimeInterval = useRef(null)
   const disableGameButtons = useRef(false)
 
-  const [showInstructions,setShowIstructions] = useState(false)
+  const [showInstructions, setShowIstructions] = useState(false)
 
-  const HideInstructions =() =>{
+  const HideInstructions = () => {
     setShowIstructions(false)
   }
 
@@ -42,7 +42,7 @@ export const DataProvider = ({ children }) => {
 
     setShowIstructions(true)
   }
-  
+
 
   const [resetUpdate, setResetUpdate] = useState(false)
   const [open, setOpen] = useState(false);
@@ -55,7 +55,7 @@ export const DataProvider = ({ children }) => {
     SetSelecionSeconds(selectioSeconds => selectioSeconds = (1 + (8 * gameLevel)))
     SetGameStarted(gameStarted => gameStarted = true)
     StartPreviewCounter();
-    Achivement.current=gameLevel
+    Achivement.current = gameLevel
 
 
   }
@@ -63,8 +63,9 @@ export const DataProvider = ({ children }) => {
 
   useEffect(() => {
 
-    
-    if (previewSeconds === 0) stopCounter() }, [previewSeconds])
+
+    if (previewSeconds === 0) stopCounter()
+  }, [previewSeconds])
 
   useEffect(() => {
     if (selectionSeconds === 0) {
@@ -107,15 +108,15 @@ export const DataProvider = ({ children }) => {
 
   const UpgradeLevel = () => {
     console.log(gameLevel)
-        clearInterval(slecetiontTimeInterval.current)
-        SetClicked(Clicked => !Clicked)
-        SetGameStarted(gameStarted => gameStarted = false)
-        if (gameLevel < 10){
-          SetGameLeveL(gameLevel => gameLevel += 1)
-      }
-      else 
-        ResetGame()
+    clearInterval(slecetiontTimeInterval.current)
+    SetClicked(Clicked => !Clicked)
+    SetGameStarted(gameStarted => gameStarted = false)
+    if (gameLevel < 10) {
+      SetGameLeveL(gameLevel => gameLevel += 1)
     }
+    else
+      ResetGame()
+  }
   const ResetGame = () => {
     setHealth(health => health = 3)
     SetGameLeveL(gameLevel => gameLevel = 1)
@@ -123,7 +124,7 @@ export const DataProvider = ({ children }) => {
     clearInterval(slecetiontTimeInterval.current)
     SetGameStarted(gameStarted => gameStarted = false)
     SetGameOver(gameOver => gameOver = true)
-    
+
   }
   const CloseModal = () => {
     setOpen(open => open = false)
@@ -162,7 +163,7 @@ export const DataProvider = ({ children }) => {
 
   }, [gameLevel, resetUpdate]);
   return (
-    <DataContext.Provider value={{HideInstructions,showInstructions,DisplayInstructions,disableGameButtons,gameOver, Clicked,health, Message, Achivement, open, CloseModal, gameStarted, setHealth, ReduceHealth, gameLevel, UpgradeLevel, ResetGame, previewSeconds, StartStage, buttonStates, RevealHiddenColors, gameMap, showPreviewCounter, selectionSeconds }}>
+    <DataContext.Provider value={{ HideInstructions, showInstructions, DisplayInstructions, disableGameButtons, gameOver, Clicked, health, Message, Achivement, open, CloseModal, gameStarted, setHealth, ReduceHealth, gameLevel, UpgradeLevel, ResetGame, previewSeconds, StartStage, buttonStates, RevealHiddenColors, gameMap, showPreviewCounter, selectionSeconds }}>
       {children}
     </DataContext.Provider>
   )
