@@ -144,11 +144,15 @@ export const DataProvider = ({ children }) => {
     if (gameMap.current[Index] === "#4d4d00") {
       // ReduceHealth();
       setMisses(misses + 1);
+      localStorage.setItem("misses",String(misses + 1));
+      console.log("Missed ---------------asdjasdajh");
     }
     else {
       correctCards.current -= 1
       if (correctCards.current === 0) {
         setScore(score + 1);
+        console.log("Hit-------------asdjasdajh");
+        localStorage.setItem("socre",String(score + 1));
         UpgradeLevel()
       }
     }
