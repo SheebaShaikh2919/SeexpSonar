@@ -1,13 +1,9 @@
-
 import { createContext, useState, useRef, useEffect } from "react";
-
 const DataContext = createContext({})
 
 export const DataProvider = ({ children }) => {
-
   const [gameLevel, SetGameLeveL] = useState(1)
   // const [health, setHealth] = useState(3);
-
   const Achivement = useRef(0);
 
 

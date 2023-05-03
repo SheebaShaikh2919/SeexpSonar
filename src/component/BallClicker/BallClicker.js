@@ -123,6 +123,9 @@ const BallClicker = () => {
     setObjectVisible(false);
   };
 
+  // if (score + misses < 10) {
+
+  // }
 
 
   return (

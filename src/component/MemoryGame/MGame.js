@@ -12,12 +12,13 @@ import DataContext from "../../GameContext";
 import InstructionsModal from "../../component/MemoryGame/ModalMessage/Instructions";
 // import { Box } from '@mui/material';
 import ProgressTimer from "./ScoreBoard/ProgressTimer";
+import { number } from 'yup';
 
 
 
 const MGame = () => {
 
-    const {previewSeconds, showPreviewCounter, selectionSeconds, ResetGame, misses, score } = useContext(DataContext);
+    const { ResetGame, misses, score } = useContext(DataContext);
     console.log(misses);
     // const gameProps = {
     //     previewSeconds: 5,
@@ -63,6 +64,7 @@ const MGame = () => {
                     score: score,
                     miss: misses,
                     total: score - misses,
+                    number: 10,
                     // status: score + misses > 10 ? 1 : 0,
                     status: score > 5 ? 1 : 0,
                     user: currentUser.email,
@@ -143,7 +145,7 @@ const MGame = () => {
                                         return (
                                             <tr key={item[1]}>
                                                 <th scope="row">{index + 1}trail</th>
-                                                <td>10</td>
+                                                <td>{item[1].number}</td>
                                                 <td>{item[1].score}</td>
                                                 <td>{item[1].miss}</td>
                                                 <td>{item[1].total}</td>
