@@ -20,6 +20,7 @@ const BallClicker = () => {
   const [submitDisabled, setSubmitDisabled] = useState(false);
   const [average, setAverage] = useState(0);
 
+  const [gameOver, setgameOver] = useState(false);
 
 
   useEffect(() => {
@@ -32,15 +33,24 @@ const BallClicker = () => {
       .get(`https://fun-games-c4f99-default-rtdb.firebaseio.com/Balltest/${userId}.json`)
       .then((response) => {
         setPostData(response.data);
+        // var gamesOver = 0;
         var grandTotal = 0;
         Object.entries(response.data).map((item) => {
           grandTotal += item[1].total;
         })
+        // Object.entries(response.data).map((item) => {
+        //   gamesOver = item[1].score + item[1].miss;
+        // })
+        // console.log(gamesOver);
+        // if(gamesOver == 10){
+        //   setgameOver(true);
+        // }
         setAverage(grandTotal/Object.entries(response.data).length);
         // console.log(response);
         if (Object.entries(response.data).length >= 3) {
           setSubmitDisabled(true);
         }
+        
       })
       
       .catch((error) => console.log(error));
@@ -152,24 +162,30 @@ const BallClicker = () => {
             </div>
           </div>
         </div>
-              <div>
-                {objectVisible && <div style={{
-                  position: 'absolute',
-                  left: position.x,
-                  top: position.y,
-                  width: '50px',
-                  height: '50px',
-                  backgroundColor: 'green',
-                  borderRadius: '50%',
-                  zIndex: '5'
-                }} onClick={handleGameClick}></div>}
-        <div className="row justify-content-start my-3">
-          <div className="col-lg-4">
-            <div className="border shadow p-4" onClick={handleMiss}  style={{ height: "400px" , zIndex: '-5', backgroundColor: "grey" }}>
+        {(score + misses) < 10 ?
+      // {console.log(gameOver)}
+        <div>
+          {objectVisible && <div style={{
+            position: 'absolute',
+            left: position.x,
+            top: position.y,
+            width: '50px',
+            height: '50px',
+            backgroundColor: 'green',
+            borderRadius: '50%',
+            zIndex: '5'
+          }} onClick={handleGameClick}></div>}
+          <div className="row justify-content-start my-3">
+            <div className="col-lg-4">
+              <div className="border shadow p-4" onClick={handleMiss}  style={{ height: "400px" , zIndex: '-5', backgroundColor: "grey" }}>
+                </div>
               </div>
             </div>
-          </div>
+        </div> : 
+        <div>
+          <h1>game Over</h1>
         </div>
+          }
         <div className="col-lg-4">
           <div className="border p-4 shadow">
             <h4 className="">Score</h4>
