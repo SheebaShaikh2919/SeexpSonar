@@ -83,8 +83,8 @@ const BallClicker = () => {
 
   if (!objectVisible) {
     setPosition({
-      x: Math.floor(Math.random() * (500 - 300 + 1) + 300),
-      y: Math.floor(Math.random() * (500 - 300 + 1) + 300)
+      x: Math.floor(Math.random() * (600 - 300 + 1) + 300),
+      y: Math.floor(Math.random() * (700 - 400 + 1) + 400)
     });
     setObjectVisible(true);
   }
