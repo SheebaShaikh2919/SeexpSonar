@@ -18,8 +18,8 @@ import { number } from 'yup';
 
 const MGame = () => {
 
-    const { ResetGame, misses, score } = useContext(DataContext);
-    console.log(misses);
+    const { ResetGame, misses, scores } = useContext(DataContext);
+    // console.log(misses);
     // const gameProps = {
     //     previewSeconds: 5,
     //     showPreviewCounter: true,
@@ -58,19 +58,19 @@ const MGame = () => {
     const handleAddPostData = () => {
         //   check if all input is taken
         //  if user wants to add a new card
-        var score = localStorage.getItem("score") || 0;
+        var scores = localStorage.getItem("scores") || 0;
         var misses = localStorage.getItem("misses") || 0;
-        // console.log(socre);
+        console.log(scores);
         // console.log(misses);
         Axios
             .post(`https://fun-games-c4f99-default-rtdb.firebaseio.com/memorytest/${userId}.json`,
                 {
-                    score: score,
+                    score: scores,
                     miss: misses,
-                    total: score - misses,
-                    number: 10,
+                    total: scores * 10,
+                    totalnumber: 10,
                     // status: score + misses > 10 ? 1 : 0,
-                    status: score > 5 ? 1 : 0,
+                    // status: score > 5 ? 1 : 0,
                     user: currentUser.email,
                     Timestamp: new Date().toUTCString(),
                 }
@@ -149,7 +149,7 @@ const MGame = () => {
                                         return (
                                             <tr key={item[1]}>
                                                 <th scope="row">{index + 1}trail</th>
-                                                <td>{item[1].number}</td>
+                                                <td>{item[1].totalnumber}</td>
                                                 <td>{item[1].score}</td>
                                                 <td>{item[1].miss}</td>
                                                 <td>{item[1].total}</td>

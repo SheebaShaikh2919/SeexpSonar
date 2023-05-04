@@ -23,7 +23,7 @@ export const DataProvider = ({ children }) => {
   const [gameOver, SetGameOver] = useState(false)
   const [Message, SetMessage] = useState("")
   const [misses, setMisses] = useState(0);
-  const [score, setScore] = useState(0);
+  const [scores, setScores] = useState(0);
 
 
   const interval = useRef(null)
@@ -150,9 +150,9 @@ export const DataProvider = ({ children }) => {
     else {
       correctCards.current -= 1
       if (correctCards.current === 0) {
-        setScore(score + 1);
+        setScores(scores + 1);
         console.log("Hit-------------asdjasdajh");
-        localStorage.setItem("socre",String(score + 1));
+        localStorage.setItem("scores",String(scores + 1));
         UpgradeLevel()
       }
     }
@@ -170,7 +170,7 @@ export const DataProvider = ({ children }) => {
   }, [gameLevel, resetUpdate]);
   return (
     // <DataContext.Provider value={{ HideInstructions, showInstructions, DisplayInstructions, disableGameButtons, gameOver, Clicked, health, Message, Achivement, open, CloseModal, gameStarted, setHealth, ReduceHealth, gameLevel, UpgradeLevel, ResetGame, previewSeconds, StartStage, buttonStates, RevealHiddenColors, gameMap, showPreviewCounter, selectionSeconds }}>
-    <DataContext.Provider value={{ HideInstructions, showInstructions, DisplayInstructions, disableGameButtons, gameOver, Clicked, Message, misses , score , Achivement, gameStarted, gameLevel, UpgradeLevel, ResetGame, previewSeconds, StartStage, buttonStates, RevealHiddenColors, gameMap, showPreviewCounter, selectionSeconds, misses }}>
+    <DataContext.Provider value={{ HideInstructions, showInstructions, DisplayInstructions, disableGameButtons, gameOver, Clicked, Message, misses , scores , Achivement, gameStarted, gameLevel, UpgradeLevel, ResetGame, previewSeconds, StartStage, buttonStates, RevealHiddenColors, gameMap, showPreviewCounter, selectionSeconds, misses }}>
     {children}
     </DataContext.Provider>
   )

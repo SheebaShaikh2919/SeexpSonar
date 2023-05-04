@@ -2,6 +2,10 @@
     font-family:'Times New Roman';
 }
 
+.font-weight{
+font-weight: 600;
+}
+
 .boxpadding{
     margin-top:10pt; 
     margin-bottom:0pt; 
@@ -485,3 +489,211 @@
 	font-size: 20px;
 	font-weight: 500;
   }
+
+
+.aaa{
+  margin-top:0pt; 
+  margin-bottom:0pt; 
+  text-align:center; 
+  line-height:115%; 
+  font-size:11pt;
+}
+
+.aaaa{
+    margin-top:0pt; 
+    margin-left:36pt; 
+    margin-bottom:0pt; 
+    text-indent:36pt; 
+    line-height:115%; 
+    font-size:11pt;
+}
+
+.bbb{
+    width:25.65pt; text-indent:0pt; display:inline-block;
+}
+
+.bbbb{
+   margin-top:0pt; margin-bottom:0pt; font-size:11pt;
+}
+
+.ccc{
+    margin-top:0pt; margin-right:36pt; margin-bottom:0pt; font-size:11pt;
+}
+
+.cccc{
+    margin-top:0pt; margin-right:36pt; margin-bottom:0pt;
+}
+
+.ddd{
+    margin-top:0pt; margin-bottom:0pt;
+}
+
+.dddd{
+    width:20.27pt; display:inline-block;
+}
+
+.eee{
+    width:36pt; display:inline-block;
+}
+
+.eeee{
+    font-family:'Times New Roman';
+     font-size:11pt;
+}
+
+.fff{
+    width:24.56pt; display:inline-block;
+}
+
+.ffff{
+    width:11.82pt; display:inline-block;
+}
+
+.ggg{
+    width:36pt; font-family:'Lucida Console'; display:inline-block;
+}
+
+.gggg{
+    width:22.69pt; font-family:'Lucida Console'; display:inline-block;
+}
+
+.hhh{
+    width:24.3pt; font-family:'Lucida Console'; display:inline-block;
+}
+
+.hhhh{
+    width:16.07pt; display:inline-block;
+}
+
+.iii{
+    width:24.25pt; display:inline-block;
+}
+
+.iiii{
+    width:3.07pt; display:inline-block;
+}
+
+.jjj{
+    width:5.98pt; display:inline-block;
+}
+
+.jjjj{
+    width:20.33pt; display:inline-block;
+}
+
+.kkk{
+    width:0.52pt; display:inline-block;
+}
+
+.kkkk{
+    width:542.4pt; border:1.5pt double #000000; border-collapse:collapse;
+}
+
+.lll{
+    height:31.9pt;
+}
+
+.llll{
+    width:75.6pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:3pt; padding-right:5.03pt; padding-left:4.65pt; vertical-align:top;
+}
+
+.mmm{
+    width:88.2pt; border-right-style:solid; border-right-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:3pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top;
+}
+
+.mmmm{
+    width:92.7pt; border-right-style:solid; border-right-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:3pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top;
+}
+
+.nnn{
+    width:43.2pt; border-style:solid; border-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top;
+}
+
+.nnnn{
+    width:34.2pt; border-style:solid; border-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top;
+}
+
+.ppp{
+    width:75.6pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:4.65pt; vertical-align:top;
+}
+
+.pppp{
+    width:187.2pt; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:4.65pt; padding-left:5.03pt; vertical-align:top
+}
+
+.qqq{
+    width:16.2pt; border-style:solid; border-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top;
+}
+
+.qqqq{
+    width:38.7pt; border-style:solid; border-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top;
+}
+
+.rrr{
+    font-family:'Times New Roman'; 
+   font-size:7.33pt;
+}
+
+.rrrr{
+    width:23.92pt; display:inline-block;
+}
+
+.sss{
+    width:241.2pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:3pt; padding-right:4.65pt; padding-left:5.03pt; vertical-align:top;
+}
+
+.ssss{
+    width:75.6pt; border-top-style:solid; border-top-width:3pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:4.65pt; vertical-align:top;
+}
+
+.ttt{
+    width:34.2pt; border-style:solid; border-width:3pt 0.75pt 0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top;
+}
+
+.tttt{
+    width:43.2pt; border-style:solid; border-width:3pt 0.75pt 0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top;
+}
+
+.uuu{
+    width:16.2pt; border-style:solid; border-width:3pt 0.75pt 0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top;
+}
+
+.uuuu{
+    width:187.2pt; border-top-style:solid; border-top-width:3pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:4.65pt; padding-left:5.03pt; vertical-align:top;
+}
+
+.vvv{
+    width:38.7pt; border-style:solid; border-width:3pt 0.75pt 0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top;
+}
+
+.vvvv{
+    width:75.6pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; padding-right:5.03pt; padding-left:4.65pt; vertical-align:top;
+}
+
+.wwww{
+    width:34.2pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top;
+}
+
+.wwwww{
+    width:43.2pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top;
+}
+
+.xxx{
+    width:38.7pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top;
+}
+
+.xxxx{
+    width:16.2pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top;
+}
+
+.yyy{
+    width:187.2pt; border-top-style:solid; border-top-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; padding-right:4.65pt; padding-left:5.03pt; vertical-align:top;
+}
+
+.yyyy{
+    width:30.5pt; display:inline-block;
+}
+
+.zzz{
+    margin-top:0pt; margin-bottom:0pt; text-indent:36pt; font-size:11pt;
+}
