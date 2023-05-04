@@ -54,9 +54,6 @@ const MGame = () => {
                 Object.entries(response.data).map((item) => {
                   grandTotal += item[1].total;
                 })
-                if (Object.entries(response.data).length >= 3) {
-                    setSubmitDisabled(true);
-                }
                 setAverage(grandTotal/Object.entries(response.data).length);
                 // console.log(response);
                 if (Object.entries(response.data).length >= 3) {

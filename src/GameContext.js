@@ -146,6 +146,7 @@ export const DataProvider = ({ children }) => {
       setMisses(misses + 1);
       localStorage.setItem("misses",String(misses + 1));
       console.log("Missed ---------------asdjasdajh");
+      UpgradeLevel()
     }
     else {
       correctCards.current -= 1
