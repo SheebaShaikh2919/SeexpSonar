@@ -36,6 +36,8 @@ const MGame = () => {
     const [isPostAdded, setIsPostAdded] = useState(false);
     const [submitDisabled, setSubmitDisabled] = useState(false);
     const [resetDisabled, setResetDisabled] = useState(false);
+    const [average, setAverage] = useState(0);
+
 
 
     useEffect(() => {
@@ -48,8 +50,17 @@ const MGame = () => {
             .get(`https://fun-games-c4f99-default-rtdb.firebaseio.com/memorytest/${userId}.json`)
             .then((response) => {
                 setPostData(response.data);
+                var grandTotal = 0;
+                Object.entries(response.data).map((item) => {
+                  grandTotal += item[1].total;
+                })
                 if (Object.entries(response.data).length >= 3) {
                     setSubmitDisabled(true);
+                }
+                setAverage(grandTotal/Object.entries(response.data).length);
+                // console.log(response);
+                if (Object.entries(response.data).length >= 3) {
+                  setSubmitDisabled(true);
                 }
             })
             .catch((error) => console.log(error));
@@ -124,7 +135,7 @@ const MGame = () => {
                     </Box>
                     <Box container sx={{ display: "flex", flexDirection: 'row', justifyContent: "center" }}>
                     <Box  sx={{ display: "flex", justifyContent: "center", alignContent: "center",}}> */}
-                        <button className="btn btn-success" onClick={ResetGame} disabled={resetDisabled}>Reset</button>
+                        {/* <button className="btn btn-success" onClick={ResetGame} disabled={resetDisabled}>Reset</button> */}
                         {/* </Box>
                     </Box> */}
                     </div>
@@ -152,13 +163,15 @@ const MGame = () => {
                                                 <td>{item[1].totalnumber}</td>
                                                 <td>{item[1].score}</td>
                                                 <td>{item[1].miss}</td>
-                                                <td>{item[1].total}</td>
+                                                <td>{item[1].total}%</td>
                                                 {/* <td>{item[1].status == 1 ? <span className="text-success">Non Autistic</span> : <span className="text-danger">Autistic</span>}</td> */}
                                             </tr>
                                         )
                                     })}
                                 </tbody>
-                            </table>
+                                <p className="mt-4 d-flex">Average : {(average).toFixed(0)}%</p>
+                                <p className="mt-4">status : { (average).toFixed(0) >= 70 ? <span className="text-success">Non Autistic</span> : <span className="text-danger">Autistic</span>}</p>
+                                </table>
                             : <span className="noTaskAdded p-5">To View Score Play the game</span>}
 
                     </div>

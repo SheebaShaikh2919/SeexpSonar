@@ -67,7 +67,7 @@ const BallClicker = () => {
         {
           score: score,
           miss: misses,
-          total: score + misses,
+          total: score * 10,
           // status: score + misses > 10 ? 1 : 0,
           // status: total > 50 ? 1 : 0,
           user: currentUser.email,
@@ -93,8 +93,8 @@ const BallClicker = () => {
 
   if (!objectVisible) {
     setPosition({
-      x: Math.floor(Math.random() * (600 - 300 + 1) + 300),
-      y: Math.floor(Math.random() * (700 - 400 + 1) + 400)
+      x: Math.floor(Math.random() * (800 - 300 + 1) + 300),
+      y: Math.floor(Math.random() * (500 - 300 + 1) + 300)
     });
     setObjectVisible(true);
   }
@@ -141,8 +141,35 @@ const BallClicker = () => {
   return (
     <>
       {/* <div zindex={-5}> */}
-        <div className="row justify-content-start">
-          <div className="col-lg-8">
+    <div className="row justify-content-start mb-4">
+      <div  className="col-lg-7">
+        {(score + misses) < 10 ?
+      // {console.log(gameOver)}
+        <div>
+          {objectVisible && <div style={{
+            position: 'absolute',
+            left: position.x,
+            top: position.y,
+            width: '50px',
+            height: '50px',
+            backgroundColor: 'green',
+            borderRadius: '50%',
+            zIndex: '5'
+          }} onClick={handleGameClick}></div>}
+          {/* <div className="row justify-content-start my-3"> */}
+            {/* <div className="col-lg-7"> */}
+              <div className="border shadow p-4" onClick={handleMiss}  style={{ height: "400px" , zIndex: '-5', backgroundColor: "grey" }}>
+                </div>
+              {/* </div> */}
+            {/* </div> */}
+        </div> : 
+        <div  className="border shadow p-4">
+          <h1>game Over</h1>
+        </div>
+          }
+        </div>
+
+        <div className="col-lg-4">
             <div className="border shadow p-4">
 
               {/* <div onClick={() => {
@@ -162,31 +189,8 @@ const BallClicker = () => {
             </div>
           </div>
         </div>
-        {(score + misses) < 10 ?
-      // {console.log(gameOver)}
-        <div>
-          {objectVisible && <div style={{
-            position: 'absolute',
-            left: position.x,
-            top: position.y,
-            width: '50px',
-            height: '50px',
-            backgroundColor: 'green',
-            borderRadius: '50%',
-            zIndex: '5'
-          }} onClick={handleGameClick}></div>}
-          <div className="row justify-content-start my-3">
-            <div className="col-lg-4">
-              <div className="border shadow p-4" onClick={handleMiss}  style={{ height: "400px" , zIndex: '-5', backgroundColor: "grey" }}>
-                </div>
-              </div>
-            </div>
-        </div> : 
-        <div>
-          <h1>game Over</h1>
-        </div>
-          }
-        <div className="col-lg-4">
+
+        <div className="col-lg-6">
           <div className="border p-4 shadow">
             <h4 className="">Score</h4>
             {postData ?
@@ -197,7 +201,7 @@ const BallClicker = () => {
                     <th scope="col"><h6>Total Score</h6></th>
                     <th scope="col"><h6>No of Hits Score</h6></th>
                     <th scope="col"><h6>No of Miss</h6></th>
-                    <th scope="col"><h6>Total</h6></th>
+                    <th scope="col"><h6>Accuracy</h6></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -208,13 +212,14 @@ const BallClicker = () => {
                         <td>10</td>
                         <td>{item[1].score}</td>
                         <td>{item[1].miss}</td>
-                        <td>{item[1].total}</td>
+                        <td>{item[1].total}%</td>
                         {/* <td>{item[1].status == 1 ? <span className="text-success">Non Autistic</span> : <span className="text-danger">Autistic</span>}</td> */}
                       </tr>
                     )
                   })}
                 </tbody>
-                <h5 className="mt-4">Average : {(average).toFixed(0)}</h5>
+                <p className="mt-4 d-flex">Average : {(average).toFixed(0)}%</p>
+                <p className="mt-4">status : { (average).toFixed(0) >= 70 ? <span className="text-success">Non Autistic</span> : <span className="text-danger">Autistic</span>}</p>
               </table>
               : <span className="noTaskAdded p-5">To View Score Play the game</span>}
 
