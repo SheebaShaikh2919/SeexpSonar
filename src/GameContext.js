@@ -111,7 +111,7 @@ export const DataProvider = ({ children }) => {
     clearInterval(slecetiontTimeInterval.current)
     SetClicked(Clicked => !Clicked)
     SetGameStarted(gameStarted => gameStarted = false)
-    if (gameLevel < 10) {
+    if (gameLevel < 1) {
       SetGameLeveL(gameLevel => gameLevel += 1)
     }
     else

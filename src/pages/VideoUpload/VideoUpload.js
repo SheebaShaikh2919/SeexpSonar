@@ -4,6 +4,7 @@ import Topbar from "../../component/Dashboard/Topbar";
 import Sidebar from "../../component/Dashboard/Sidebar";
 import Container  from "@mui/material/Container";
 import FileUploader from "../../component/Uploads/FileUploader";
+import VideoResultUpload from "../../component/Uploads/VideoResultUpload";
 
 const VideoUpload = () => {
   return (
@@ -23,10 +24,11 @@ const VideoUpload = () => {
             fontWeight="bold"
             sx={{ m: "5px 25px" }}
           >
-             Brain Frequency          
+             Patient Video Result          
             </Typography>
             <Container maxWidth="xl" sx={{ mt: 2, mb: 2 }}>
-            <FileUploader/>
+            {/* <FileUploader/> */}
+            <VideoResultUpload/>
             </Container>
         </Box>
     </main>

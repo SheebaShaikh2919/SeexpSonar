@@ -127,7 +127,7 @@ const MGame = () => {
                         </DataProvider>
                         {/* <Box container sx={{ display: "flex", flexDirection: 'row', justifyContent: "center" }}>
                         <Box  sx={{ display: "flex", justifyContent: "center", alignContent: "center",}}> */}
-                        <button className="btn btn-success" onClick={handleAddPostData} disabled={false}>Submit Result</button>
+                        <button className="btn btn-success" onClick={handleAddPostData} disabled={submitDisabled}>Submit Result</button>
                         {/* </Box>
                     </Box>
                     <Box container sx={{ display: "flex", flexDirection: 'row', justifyContent: "center" }}>

@@ -196,12 +196,12 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
-             {/* <Item title= "Video Upload"
+             <Item title= "Video Upload"
               to="/VideoUpload"
               icon={<ExtensionIcon />}
               selected={selected}
               setSelected={setSelected}
-            /> */}
+            />
 
 
             {/* <Typography

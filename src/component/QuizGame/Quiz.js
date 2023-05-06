@@ -94,7 +94,7 @@ function Quiz() {
                 <input
                   type="button"
                   value="Next"
-                  className="next-button btn-primary btn"
+                  className="next-button btn-primary text-primary btn"
                   onClick={changeQuestion}
                 />
               </>
