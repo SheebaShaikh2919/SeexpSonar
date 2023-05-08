@@ -12,7 +12,7 @@ function GameBoard() {
 
     <Box container >
 
-      <Box container sx={{ display: "grid", gap: "10px", p: "5px", gridTemplateRows: "repeat(" + `${gameLevel * 2}` + ",1fr)", gridTemplateColumns: "repeat(4,1fr)", mr: "100px", mt: "10px", ml: "100px", height: "350px", mb: "10px" }} >
+      <Box container sx={{ display: "grid", gap: "10px", p: "5px", gridTemplateRows: "repeat(" + `${gameLevel * 2}` + ",1fr)", gridTemplateColumns: "repeat(4,1fr)", mr: "100px", mt: "10px", ml: "100px", height: "300px", mb: "10px" }} >
 
         {
           gameMap.current.map((_, index) =>

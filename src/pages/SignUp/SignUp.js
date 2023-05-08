@@ -52,7 +52,7 @@ export default function SignUp() {
       fire.auth().createUserWithEmailAndPassword(email, password)
       .then((userCredential) => {
         return userCredential.user.updateProfile({
-          displayFName: name,
+          displayName: name,
         });
 
       })
@@ -72,7 +72,7 @@ export default function SignUp() {
   const { currentUser } = useContext(AuthContext);
 
   if (currentUser) {
-    return <Redirect to="/AmazonAuth" />;
+    return <Redirect to="/Home" />;
   }
 
   let errorNotification = fireErrors ? 

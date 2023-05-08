@@ -33,18 +33,10 @@ const BallClicker = () => {
       .get(`https://fun-games-c4f99-default-rtdb.firebaseio.com/Balltest/${userId}.json`)
       .then((response) => {
         setPostData(response.data);
-        // var gamesOver = 0;
         var grandTotal = 0;
         Object.entries(response.data).map((item) => {
           grandTotal += item[1].total;
         })
-        // Object.entries(response.data).map((item) => {
-        //   gamesOver = item[1].score + item[1].miss;
-        // })
-        // console.log(gamesOver);
-        // if(gamesOver == 10){
-        //   setgameOver(true);
-        // }
         setAverage(grandTotal/Object.entries(response.data).length);
         // console.log(response);
         if (Object.entries(response.data).length >= 3) {
@@ -158,7 +150,7 @@ const BallClicker = () => {
           }} onClick={handleGameClick}></div>}
           {/* <div className="row justify-content-start my-3"> */}
             {/* <div className="col-lg-7"> */}
-              <div className="border shadow p-4" onClick={handleMiss}  style={{ height: "400px" , zIndex: '-5', backgroundColor: "grey" }}>
+              <div className="border shadow p-4" onClick={handleMiss}  style={{ height: "500px" , zIndex: '-5', backgroundColor: "grey" }}>
                 </div>
               {/* </div> */}
             {/* </div> */}
@@ -169,7 +161,7 @@ const BallClicker = () => {
           }
         </div>
 
-        <div className="col-lg-4">
+        <div className="col-lg-5">
             <div className="border shadow p-4">
 
               {/* <div onClick={() => {
@@ -187,11 +179,7 @@ const BallClicker = () => {
                 <button className="btn btn-success" onClick={handleAddPostData} disabled={submitDisabled}>Submit Result</button>
               </div>
             </div>
-          </div>
-        </div>
-
-        <div className="col-lg-6">
-          <div className="border p-4 shadow">
+            <div className="border p-4 mt-3 shadow">
             <h4 className="">Score</h4>
             {postData ?
               <table class="table table-striped table-hover table-bordered border-primary">
@@ -224,8 +212,8 @@ const BallClicker = () => {
               : <span className="noTaskAdded p-5">To View Score Play the game</span>}
 
           </div>
+          </div>
         </div>
-
       {/* </div > */}
 
 

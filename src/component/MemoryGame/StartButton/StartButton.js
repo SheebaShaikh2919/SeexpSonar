@@ -6,7 +6,7 @@ function StartButton() {
   const { StartStage, gameStarted } = useContext(DataContext)
   return (
 
-    <Box container sx={{ display: "flex", justifyContent: "center", p: "5px", mr: "100px", mt: "10px", ml: "100px", height: "110px", mb: "5px" }} >
+    <Box container sx={{ display: "flex", justifyContent: "center", p: "5px", mr: "100px", mt: "10px", ml: "100px", height: "50px", mb: "5px" }} >
 
       <Slide direction="right" in={!gameStarted} mountOnEnter unmountOnExit>
         <div>

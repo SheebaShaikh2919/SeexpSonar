@@ -49,7 +49,7 @@ export default function SignIn() {
   const { currentUser } = useContext(AuthContext);
 
   if (currentUser) {
-    return <Redirect to="/AmazonAuth" />;
+    return <Redirect to="/Home" />;
   }
 
   let errorNotification = fireErrors ? 

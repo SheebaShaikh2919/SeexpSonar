@@ -1,7 +1,7 @@
 import { ColorModeContext,useMode } from './theme';
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import React from 'react';
-import { HashRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from "./pages/Home/Home";
 import AQTest from "./pages/AQTest/AQTest";
 import SignIn from './pages/SignIn/SignIn';
@@ -29,7 +29,7 @@ function App() {
     
       <Router>
         <Switch>
-          <PrivateRoute exact path="/" component={Home} />
+          <PrivateRoute exact path="/Home" component={Home} />
           <PrivateRoute  path="/AQTest" component={AQTest} />
           <PrivateRoute  path="/FingerTapping" component={FingerTapping} />
           <PrivateRoute  path="/EmojiTest" component={EMGame} />

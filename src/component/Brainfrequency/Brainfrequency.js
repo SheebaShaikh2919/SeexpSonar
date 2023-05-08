@@ -230,7 +230,7 @@ const handleAddPostData = () => {
       </div>
       <div className="col-lg-8">
         <div className="border p-4 shadow">
-          <h4 className="">Score</h4>
+          <h4 className="mb-3">Score</h4>
           {postData ?
           <>
           <table class="table table-striped table-hover table-bordered border-primary">
@@ -270,7 +270,7 @@ const handleAddPostData = () => {
                   )} ) }
               </tbody>
             </table>
-            <h4 className="">Status</h4>
+            <h4 className="mb-3">Status</h4>
             <table class="table table-striped table-hover table-bordered border-primary">
               <thead>
                 <tr>
