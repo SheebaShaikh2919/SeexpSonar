@@ -139,7 +139,7 @@ const Header = () => {
         <div className="col-lg-10">
           <div className="border p-4 shadow">
             <div className="d-flex justify-content-between mb-3">
-            <h1 className="mb-4">Patient Name  :  {currentUser.displayFName}</h1>
+            <h1 className="mb-4">Patient Name  :  {currentUser.displayName}</h1>
                     <DownloadTableExcel
                       filename="users table"
                       sheet="users"
@@ -152,7 +152,7 @@ const Header = () => {
               <table class="table table-striped table-hover table-bordered border-primary" ref={tableRef}>
                 <thead>
                 <tr>
-                  <th colspan="4"><h6>Patient Name  : {currentUser.email}</h6></th>
+                  <th colspan="4"><h6>Patient Name  : {currentUser.displayName}</h6></th>
                 </tr>
                   <tr>
                     <th scope="col"><h6>Test Type</h6></th>
