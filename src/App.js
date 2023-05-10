@@ -41,7 +41,7 @@ function App() {
           <PrivateRoute  path="/VideoUpload" component={VideoUpload} />
           <Route path="/SignIn" component={SignIn} />
           <Route path="/SignUp" component={SignUp} />
-          <Route exact path="*" component={Home} />
+          <Route exact path="*" component={SignIn} />
         </Switch>
       </Router>
      
