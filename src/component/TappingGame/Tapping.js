@@ -140,8 +140,8 @@ function Tapping() {
               )} ) }
           </tbody>
           <h5 className="mt-4">Average : {(average).toFixed(0)}</h5>
-          <h5 className="mt-4">Status : {((average).toFixed(0) >= 50 && (average).toFixed(0) <= 60) ? <span className="text-success">Non Autistic</span> : <span className="text-danger">Autistic</span>} </h5>
-        </table>
+          <h5 className="mt-4">Status : {((average).toFixed(0) >= 25 && (average).toFixed(0) <= 60) ? <span className="text-success">Healthy</span> : <span className="text-danger">Possilbe Parkison's</span>} </h5>
+          </table>
         : <span className="noTaskAdded p-5">To View Score Play the game</span>}
         </div>
           </div>

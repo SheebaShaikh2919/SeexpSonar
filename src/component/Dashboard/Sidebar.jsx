@@ -154,13 +154,7 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
-            <Item
-              title="AQ-Test"
-              to="/AQTest"
-              icon={<QuizIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
+        
             <Item
               title="Finger-Tapping"
               to="/FingerTapping"
@@ -168,20 +162,8 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
-            <Item
-              title="Emoji Test"
-              to="/EmojiTest"
-              icon={<ExtensionIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-            <Item
-              title="Brain Frequency"
-              to="/BrainFrequency"
-              icon={<ExtensionIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
+        
+          
             <Item
               title="Memory Test"
               to="/MemoryTest"
@@ -189,19 +171,7 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
-             <Item
-              title="Ball Clicking Test"
-              to="/BallGame"
-              icon={<ExtensionIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-             <Item title= "Video Upload"
-              to="/VideoUpload"
-              icon={<ExtensionIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
+          
 
 
             {/* <Typography
