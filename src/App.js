@@ -10,10 +10,7 @@ import PrivateRoute from './common/guards/PrivateRoute';
 import './App.css';
 import FingerTapping from './pages/FingerTapping/FIngerTapping';
 
-import PersonalHistory from './pages/PersonalHistory/PersonalHistory';
-import MedicalHistory from './pages/MedicalHistory/MedicalHistory';
 
-import MemoryTest from './pages/MemoryTest/MemoryTest';
 
 
 function App() {
@@ -28,9 +25,6 @@ function App() {
         <Switch>
           <PrivateRoute exact path="/Home" component={Home} />
          <PrivateRoute  path="/FingerTapping" component={FingerTapping} />
-          <PrivateRoute  path="/MedicalHistory" component={MedicalHistory} />
-          <PrivateRoute  path="/PersonalHistory" component={PersonalHistory} />
-          <PrivateRoute  path="/MemoryTest" component={MemoryTest} />
            <Route path="/SignIn" component={SignIn} />
           <Route path="/SignUp" component={SignUp} />
           <Route exact path="*" component={SignIn} />
